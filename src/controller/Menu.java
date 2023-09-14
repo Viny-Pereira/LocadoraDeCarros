@@ -38,6 +38,18 @@ public class Menu {
                     CadastrarClienteController cadastrarClienteController = new CadastrarClienteController();
                     cadastrarClienteController.execute();
                     break;
+                case 5:
+                    AlterarClienteController alterarClienteController = new AlterarClienteController();
+                    alterarClienteController.execute();
+                    break;
+                case 6:
+                    AlugarController alugarController = new AlugarController();
+                    alugarController.execute();
+                    break;
+                case 7:
+                    DevolverController devolverController = new DevolverController();
+                    devolverController.execute();
+                    break;
             }
         } while (opcao != 0);
 

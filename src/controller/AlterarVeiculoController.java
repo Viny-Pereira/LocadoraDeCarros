@@ -9,9 +9,6 @@ import java.util.Scanner;
 
 public class AlterarVeiculoController {
     Scanner scanner = new Scanner(System.in);
-    int opcao;
-    Veiculo veiculo;
-    TipoVeiculo tipoVeiculo;
     BuscarVeiculoPorPlaca buscarVeiculoPorPlaca = new BuscarVeiculoPorPlaca();
 
 

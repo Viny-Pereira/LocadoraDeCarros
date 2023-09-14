@@ -43,8 +43,8 @@ public class ClienteRepository implements Repository<Cliente> {
     public boolean update(Cliente clienteNovo) {
         for (Cliente clienteAnterior : clientes) {
             if (clienteAnterior.getIdentificacao().equalsIgnoreCase(clienteNovo.getIdentificacao())) {
-                clientes.remove(clienteAnterior);
                 clientes.add(clienteNovo);
+                clientes.remove(clienteAnterior);
                 return true;
             }
         }

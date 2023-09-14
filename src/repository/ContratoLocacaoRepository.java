@@ -26,8 +26,8 @@ public class ContratoLocacaoRepository implements Repository<ContratoLocacao> {
     public boolean update(ContratoLocacao novoContrato) {
         for (ContratoLocacao contratoAntigo : contratos) {
             if (contratoAntigo.getIdContrato() == novoContrato.getIdContrato()) {
-                contratos.remove(contratoAntigo);
                 contratos.add(novoContrato);
+                contratos.remove(contratoAntigo);
                 return true;
             }
         }

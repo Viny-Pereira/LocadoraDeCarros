@@ -5,7 +5,7 @@ import src.model.Veiculo;
 import src.utils.TempoDeLocacao;
 
 public class ValorLocacao {
-    public double calculoLocacao(ContratoLocacao contratoLocacao) {
+    public static double calculoLocacao(ContratoLocacao contratoLocacao) {
         double valorLocacao;
         int diasLocacao = TempoDeLocacao.diasLocacao(contratoLocacao);
         double desconto = Desconto.execute(contratoLocacao);

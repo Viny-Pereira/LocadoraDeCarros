@@ -13,7 +13,7 @@ public class ContratoLocacao {
     public ContratoLocacao(LocalDateTime dataAluguel, LocalDateTime dataDevolucao, Veiculo veiculo, Cliente cliente) {
         this.idContrato = ++idUltimoContrato;
         this.dataAluguel = dataAluguel;
-        this.dataDevolucao = dataDevolucao;
+        this.dataDevolucao = null;
         this.veiculo = veiculo;
         this.cliente = cliente;
     }
