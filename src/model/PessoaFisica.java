@@ -1,19 +1,19 @@
 package src.model;
 
 public class PessoaFisica extends Cliente {
-    private String idade;
+    private int idade;
 
-    public PessoaFisica(String nome, String CPF, String idade) {
+    public PessoaFisica(String nome, String CPF, int idade) {
         super(nome, CPF);
         this.idade = idade;
     }
 
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 

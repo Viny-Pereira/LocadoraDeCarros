@@ -5,7 +5,8 @@ import src.repository.VeiculosRepository;
 import src.service.api.Cadastrar;
 
 public class CadastrarVeiculo implements Cadastrar<Veiculo> {
-    private VeiculosRepository veiculosRepository;
+    private VeiculosRepository veiculosRepository = new VeiculosRepository();
+
     @Override
     public boolean execute(Veiculo veiculo) {
         if (veiculosRepository.findByPlaca(veiculo.getPlaca()) == null) {

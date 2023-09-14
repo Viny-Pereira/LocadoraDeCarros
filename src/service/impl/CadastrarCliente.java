@@ -6,7 +6,7 @@ import src.service.api.Cadastrar;
 
 public class CadastrarCliente implements Cadastrar<Cliente> {
 
-    private ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository = new ClienteRepository();
 
     @Override
     public boolean execute(Cliente cliente) {

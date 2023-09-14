@@ -7,7 +7,7 @@ import java.util.List;
 
 public class VeiculosRepository implements Repository<Veiculo> {
 
-    private static List<Veiculo> veiculos = new ArrayList<>();
+    private static final List<Veiculo> veiculos = new ArrayList<>();
 
     @Override
     public boolean create(Veiculo veiculo) {
@@ -45,8 +45,8 @@ public class VeiculosRepository implements Repository<Veiculo> {
     public boolean update(Veiculo veiculo) {
         for (Veiculo veiculoAnterior : veiculos) {
             if (veiculoAnterior.getPlaca().equalsIgnoreCase(veiculo.getPlaca())) {
-                veiculos.remove(veiculo);
                 veiculos.add(veiculo);
+                veiculos.remove(veiculo);
                 return true;
             }
         }

@@ -10,4 +10,9 @@ public class CarroPequeno extends TipoVeiculo {
     double valorDiaria() {
         return 100d;
     }
+
+    @Override
+    public String toString() {
+        return "Carro Pequeno";
+    }
 }

@@ -5,7 +5,7 @@ import src.repository.ClienteRepository;
 import src.service.api.Alterar;
 
 public class AlterarCliente implements Alterar<Cliente> {
-    private ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository = new ClienteRepository();
 
     @Override
     public boolean execute(Cliente cliente) {

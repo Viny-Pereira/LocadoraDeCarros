@@ -10,4 +10,9 @@ public class CarroSUV extends TipoVeiculo {
     double valorDiaria() {
         return 200d;
     }
+
+    @Override
+    public String toString() {
+        return "SUV";
+    }
 }

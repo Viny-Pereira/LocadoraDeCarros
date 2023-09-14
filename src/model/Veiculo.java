@@ -53,4 +53,13 @@ public class Veiculo {
     public void setDisponivel(Boolean disponivel) {
         isDisponivel = disponivel;
     }
+
+    @Override
+    public String toString() {
+        return
+                "ID: " + id +
+                        "\nPlaca: " + placa + '\'' +
+                        "\nTipo Veiculo: " + tipoVeiculo +
+                        "\nEstá disponive Disponivel: " + isDisponivel;
+    }
 }

@@ -1,4 +1,4 @@
-package src.service.impl;
+package src.service.impl.obsoleto;
 
 import src.model.Cliente;
 import src.model.ContratoLocacao;

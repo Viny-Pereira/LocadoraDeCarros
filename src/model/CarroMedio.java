@@ -10,4 +10,9 @@ public class CarroMedio extends TipoVeiculo{
     double valorDiaria() {
         return 150d;
     }
+
+    @Override
+    public String toString() {
+        return "Carro Medio";
+    }
 }

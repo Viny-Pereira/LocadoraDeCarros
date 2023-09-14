@@ -5,7 +5,7 @@ import src.repository.ClienteRepository;
 import src.service.api.Buscar;
 
 public class BuscarClientePorIdentificacao implements Buscar<Cliente> {
-    private ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository = new ClienteRepository();
 
     @Override
     public Cliente execute(String identificacao) {

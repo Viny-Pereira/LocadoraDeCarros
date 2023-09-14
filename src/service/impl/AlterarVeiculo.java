@@ -5,7 +5,7 @@ import src.repository.VeiculosRepository;
 import src.service.api.Alterar;
 
 public class AlterarVeiculo implements Alterar<Veiculo> {
-    private VeiculosRepository veiculosRepository;
+    private VeiculosRepository veiculosRepository = new VeiculosRepository();
 
     @Override
     public boolean execute(Veiculo veiculo) {
@@ -15,4 +15,5 @@ public class AlterarVeiculo implements Alterar<Veiculo> {
         }
         return false;
     }
+
 }
