@@ -9,6 +9,10 @@ public class BuscarClientePorIdentificacao implements Buscar<Cliente> {
 
     @Override
     public Cliente execute(String identificacao) {
-        return clienteRepository.findByDocumento(identificacao);
+        Cliente cliente = clienteRepository.findByDocumento(identificacao);
+        if (cliente == null) {
+            System.out.println("CLIENTE NÃO ENCONTRADO");
+        }
+        return cliente;
     }
 }

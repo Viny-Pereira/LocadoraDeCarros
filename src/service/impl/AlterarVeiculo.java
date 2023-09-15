@@ -5,15 +5,17 @@ import src.repository.VeiculosRepository;
 import src.service.api.Alterar;
 
 public class AlterarVeiculo implements Alterar<Veiculo> {
+    VerificacaoCadastroVeiculo verificacaoCadastroVeiculo = new VerificacaoCadastroVeiculo();
     private VeiculosRepository veiculosRepository = new VeiculosRepository();
 
     @Override
-    public boolean execute(Veiculo veiculo) {
-        if (veiculosRepository.findById(veiculo.getId()) != null) {
+    public void execute(Veiculo veiculo) {
+        if (!verificacaoCadastroVeiculo.execute(veiculo)) {
             veiculosRepository.update(veiculo);
-            return true;
+            System.out.println("PLACA ATUALIZADO COM SUCESSO");
+        } else {
+            System.out.println("PLACA NÃO ENCONTRADO");
         }
-        return false;
     }
 
 }

@@ -56,10 +56,6 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return
-                "ID: " + id +
-                        "\nPlaca: " + placa + '\'' +
-                        "\nTipo Veiculo: " + tipoVeiculo +
-                        "\nEstá disponive Disponivel: " + isDisponivel;
+        return "ID: " + id + " - Placa: " + placa + " - Tipo Veiculo: " + tipoVeiculo + " - Está disponive Disponivel: " + isDisponivel;
     }
 }

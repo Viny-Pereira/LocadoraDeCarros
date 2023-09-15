@@ -5,16 +5,18 @@ import src.repository.ClienteRepository;
 import src.service.api.Cadastrar;
 
 public class CadastrarCliente implements Cadastrar<Cliente> {
-
+    VerificacaoCadastroCliente verificacaoCadastro = new VerificacaoCadastroCliente();
     private ClienteRepository clienteRepository = new ClienteRepository();
 
     @Override
-    public boolean execute(Cliente cliente) {
-        if (clienteRepository.findByDocumento(cliente.getIdentificacao()) == null) {
+    public void execute(Cliente cliente) {
+        if (verificacaoCadastro.execute(cliente)) {
             clienteRepository.create(cliente);
-            return true;
+            System.out.println("CLIENTE CADASTRADO COM SUCESSO");
+
         } else {
-            return false;
+            System.out.println("CLIENTE JÁ CADASTRADO");
+
         }
     }
 

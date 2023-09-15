@@ -43,7 +43,6 @@ public class CadastrarClienteController {
             default -> System.out.println("OPCÃO INVÁLIDA");
         }
         cadastrarCliente.execute(cliente);
-        System.out.println("Cliente cadastrado com sucesso");
 
     }
 

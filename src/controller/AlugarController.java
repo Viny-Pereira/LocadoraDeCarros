@@ -8,6 +8,7 @@ import src.service.impl.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 public class AlugarController {
@@ -20,6 +21,7 @@ public class AlugarController {
     BuscarVeiculoPorPlaca buscarVeiculoPorPlaca = new BuscarVeiculoPorPlaca();
     BuscarClientePorIdentificacao buscarClientePorIdentificacao = new BuscarClientePorIdentificacao();
     CadastrarContrato cadastrarContrato = new CadastrarContrato();
+    ContratoLocacao contratoLocacao;
 
     boolean verificacaoPlaca = false;
     boolean verificacaoIdentificacao = false;
@@ -33,31 +35,38 @@ public class AlugarController {
             cliente = buscarClientePorIdentificacao.execute(identificacao);
             if (cliente != null) {
                 verificacaoIdentificacao = true;
-            } else {
-                System.out.println("Cliente não cadastrado");
             }
         }
-
         while (!verificacaoPlaca) {
-            listarVeiculos.execute();
+            List<Veiculo> listaVeiculos = listarVeiculos.execute();
+            for (Veiculo veiculo : listaVeiculos) {
+                System.out.println(veiculo);
+            }
             System.out.println("DIGITE A PLACA DO VEICULO DESEJADO");
             placa = scanner.next();
             veiculo = buscarVeiculoPorPlaca.execute(placa);
-            // Criar classe para verificacao
-            if (veiculo.getDisponivel()) {
-                verificacaoPlaca = true;
-                Alugar.execute(veiculo);
-            } else {
-                System.out.println("Veiculo indisponivel");
+            if (veiculo != null) {
+                if (veiculo.getDisponivel()) {
+                    verificacaoPlaca = true;
+                } else {
+                    System.out.println("Veiculo indisponivel");
+                }
+
             }
         }
-
-        System.out.println("DIGITE A DATA DE ALUGUEL (dd-MM-yyyy HH:mm:ss) ");
-        String dataAluguel = scanner.next();
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("DIGITE A DATA DE ALUGUEL (dd-MM-yyyy HH:mm:ss)");
+        String dataAluguel = scanner1.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        LocalDateTime dataAluguelFormatada = LocalDateTime.parse(dataAluguel, formatter);
-        ContratoLocacao contratoLocacao = new ContratoLocacao(dataAluguelFormatada, null, veiculo, cliente);
-        cadastrarContrato.execute(contratoLocacao);
-        System.out.println("Aluguel realizado com sucesso");
+        try {
+            LocalDateTime dataAluguelFormatada = LocalDateTime.parse(dataAluguel, formatter);
+            contratoLocacao = new ContratoLocacao(dataAluguelFormatada, veiculo, cliente);
+            cadastrarContrato.execute(contratoLocacao);
+            Alugar.execute(veiculo);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 }

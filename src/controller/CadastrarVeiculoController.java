@@ -26,7 +26,6 @@ public class CadastrarVeiculoController {
 
         switch (opcao) {
             case 1 -> {
-                System.out.println("TEST");
                 tipoVeiculo = new CarroPequeno();
                 veiculo = new Veiculo(placa, tipoVeiculo);
             }
@@ -38,10 +37,9 @@ public class CadastrarVeiculoController {
                 tipoVeiculo = new CarroSUV();
                 veiculo = new Veiculo(placa, tipoVeiculo);
             }
-            default -> System.out.println("XXXXXXXX");
+            default -> System.out.println("OPÇÃO INVÁLIDA");
         }
         cadastrarVeiculo.execute(veiculo);
-        System.out.println("Veiculo cadastrado com sucesso");
 
     }
 

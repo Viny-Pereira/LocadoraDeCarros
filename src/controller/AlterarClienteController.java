@@ -16,10 +16,11 @@ public class AlterarClienteController {
         System.out.println("Digite a identificacao do cliente desejado");
         String identificacao = scanner.next();
         Cliente cliente = buscarClientePorIdentificacao.execute(identificacao);
-        System.out.println("Qual o novo nome para o cliente");
-        String novoNome = scanner.next();
-        cliente.setNome(novoNome);
-        alterarCliente.execute(cliente);
-        System.out.println("Nome atualizado com sucesso!");
+        if (cliente != null) {
+            System.out.println("Qual o novo nome para o cliente");
+            String novoNome = scanner.next();
+            cliente.setNome(novoNome);
+            alterarCliente.execute(cliente);
+        }
     }
 }

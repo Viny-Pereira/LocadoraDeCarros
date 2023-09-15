@@ -10,7 +10,10 @@ public class ContratoLocacao {
     private int idUltimoContrato = 0;
     private Cliente cliente;
 
-    public ContratoLocacao(LocalDateTime dataAluguel, LocalDateTime dataDevolucao, Veiculo veiculo, Cliente cliente) {
+    public ContratoLocacao() {
+    }
+
+    public ContratoLocacao(LocalDateTime dataAluguel, Veiculo veiculo, Cliente cliente) {
         this.idContrato = ++idUltimoContrato;
         this.dataAluguel = dataAluguel;
         this.dataDevolucao = null;

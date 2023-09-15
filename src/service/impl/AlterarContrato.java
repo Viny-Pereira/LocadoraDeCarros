@@ -5,14 +5,14 @@ import src.repository.ContratoLocacaoRepository;
 import src.service.api.Alterar;
 
 public class AlterarContrato implements Alterar<ContratoLocacao> {
+    VerificacaoCadastroContrato verificacaoCadastroContrato = new VerificacaoCadastroContrato();
     private ContratoLocacaoRepository contratoLocacaoRepository = new ContratoLocacaoRepository();
 
     @Override
-    public boolean execute(ContratoLocacao contratoLocacao) {
-        if (contratoLocacaoRepository.findById(contratoLocacao.getIdContrato()) != null) {
+    public void execute(ContratoLocacao contratoLocacao) {
+        if (!verificacaoCadastroContrato.execute(contratoLocacao)) {
             contratoLocacaoRepository.update(contratoLocacao);
-            return true;
         }
-        return false;
+
     }
 }
