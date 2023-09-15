@@ -3,11 +3,11 @@ package src.model;
 import java.time.LocalDateTime;
 
 public class ContratoLocacao {
+    private static int idUltimoContrato = 0;
     private LocalDateTime dataAluguel;
     private LocalDateTime dataDevolucao;
     private Veiculo veiculo;
     private int idContrato;
-    private int idUltimoContrato = 0;
     private Cliente cliente;
 
     public ContratoLocacao() {

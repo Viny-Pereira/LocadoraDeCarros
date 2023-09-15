@@ -58,15 +58,10 @@ public class AlugarController {
         System.out.println("DIGITE A DATA DE ALUGUEL (dd-MM-yyyy HH:mm:ss)");
         String dataAluguel = scanner1.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        try {
-            LocalDateTime dataAluguelFormatada = LocalDateTime.parse(dataAluguel, formatter);
-            contratoLocacao = new ContratoLocacao(dataAluguelFormatada, veiculo, cliente);
-            cadastrarContrato.execute(contratoLocacao);
-            Alugar.execute(veiculo);
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        LocalDateTime dataAluguelFormatada = LocalDateTime.parse(dataAluguel, formatter);
+        contratoLocacao = new ContratoLocacao(dataAluguelFormatada, veiculo, cliente);
+        cadastrarContrato.execute(contratoLocacao);
+        Alugar.execute(veiculo);
 
     }
 }

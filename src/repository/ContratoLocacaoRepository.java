@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContratoLocacaoRepository implements Repository<ContratoLocacao> {
-    private static final List<ContratoLocacao> contratos = new ArrayList<>();
+    private static List<ContratoLocacao> contratos = new ArrayList<>();
 
     @Override
     public boolean create(ContratoLocacao contratoLocacao) {

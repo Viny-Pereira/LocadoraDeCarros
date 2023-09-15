@@ -9,7 +9,7 @@ public class VerificacaoCadastroContrato implements VerificacaoCadastro<Contrato
 
     @Override
     public boolean execute(ContratoLocacao contratoLocacao) {
-        if (contratoLocacaoRepository.findById(contratoLocacao.getIdContrato()) == null) {
+        if (contratoLocacaoRepository.findByVeiculo(contratoLocacao.getVeiculo()) == null) {
             return true;
         }
         return false;
