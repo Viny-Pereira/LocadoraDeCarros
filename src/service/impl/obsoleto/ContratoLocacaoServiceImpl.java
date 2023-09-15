@@ -4,7 +4,7 @@ import src.model.Cliente;
 import src.model.ContratoLocacao;
 import src.model.Veiculo;
 import src.repository.ContratoLocacaoRepository;
-import src.service.api.ContratoLocacaoService;
+import src.service.api.obsoleto.ContratoLocacaoService;
 
 import java.util.List;
 

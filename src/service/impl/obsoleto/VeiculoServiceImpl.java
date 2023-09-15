@@ -2,7 +2,7 @@ package src.service.impl.obsoleto;
 
 import src.model.Veiculo;
 import src.repository.VeiculosRepository;
-import src.service.api.VeiculoService;
+import src.service.api.obsoleto.VeiculoService;
 
 import java.util.List;
 

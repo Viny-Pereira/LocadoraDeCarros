@@ -1,4 +1,4 @@
-package src.service.api;
+package src.service.api.obsoleto;
 
 import src.model.Veiculo;
 
